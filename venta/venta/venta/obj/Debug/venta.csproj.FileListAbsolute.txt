@@ -12,3 +12,17 @@ C:\Users\aliras\Desktop\APP\venta\venta\venta\obj\Debug\venta.pdb
 C:\Users\aliras\Desktop\APP\venta\venta\venta\obj\Debug\venta.exe.config
 C:\Users\aliras\Desktop\APP\venta\venta\venta\obj\Debug\venta.Stock.resources
 C:\Users\aliras\Desktop\APP\venta\venta\venta\obj\Debug\venta.RegistrarArticulo.resources
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\bin\Debug\venta.exe.config
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\bin\Debug\venta.exe
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\bin\Debug\venta.pdb
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\obj\Debug\venta.csproj.AssemblyReference.cache
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\obj\Debug\venta.exe.config
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\obj\Debug\venta.Form1.resources
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\obj\Debug\venta.Properties.Resources.resources
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\obj\Debug\venta.RegistrarArticulo.resources
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\obj\Debug\venta.Stock.resources
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\obj\Debug\venta.venta.resources
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\obj\Debug\venta.csproj.GenerateResource.cache
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\obj\Debug\venta.csproj.CoreCompileInputs.cache
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\obj\Debug\venta.exe
+C:\Users\aliras\Desktop\APP\alonso_lira\venta\venta\venta\obj\Debug\venta.pdb
