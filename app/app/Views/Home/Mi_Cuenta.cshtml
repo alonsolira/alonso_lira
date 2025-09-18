@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Estado de Cuenta</title>
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 25px;
+            color: #1c1e21;
+        }
+
+        .container {
+            max-width: 1200px; /* Un poco más ancho para la nueva columna */
+            margin: auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #0d2c4e;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 10px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background-color: #f7f8fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+            .summary-card .label {
+                font-size: 0.9em;
+                color: #606770;
+                margin-bottom: 8px;
+                display: block;
+            }
+
+            .summary-card .value {
+                font-size: 1.8em;
+                font-weight: 700;
+                color: #0d2c4e;
+            }
+
+            .summary-card.deuda .value {
+                color: #d93025;
+            }
+
+            .summary-card.abono-mes .value {
+                color: #1a73e8;
+            }
+
+        /* Estilos de la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        thead {
+            background-color: #0d2c4e;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f7f8fa;
+        }
+
+        .monto, .plazo {
+            text-align: right;
+        }
+
+        .monto, .folio {
+            font-family: monospace;
+            font-size: 1.1em;
+        }
+
+        tfoot {
+            font-weight: bold;
+            background-color: #f7f8fa;
+        }
+
+            tfoot td {
+                font-size: 1.1em;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🛒 Mi Estado de Cuenta</h1>
+
+        <div class="summary-grid">
+            <div class="summary-card deuda">
+                <span class="label">Deuda Total Pendiente</span>
+                <span class="value" id="deuda-total-pendiente">$0.00</span>
+            </div>
+            <div class="summary-card abono-mes">
+                <span class="label">Abono Total de Este Mes</span>
+                <span class="value" id="abono-mes-total">$0.00</span>
+            </div>
+            <div class="summary-card">
+                <span class="label">Monto Total Comprado</span>
+                <span class="value" id="monto-total-comprado">$0.00</span>
+            </div>
+            <div class="summary-card">
+                <span class="label">Monto Total Abonado</span>
+                <span class="value" id="monto-total-abonado">$0.00</span>
+            </div>
+        </div>
+
+        <section>
+            <h2>Detalle de Compras y Abonos Mensuales</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Folio de Ticket</th>
+                        <th>Producto</th>
+                        <th>Fecha de Compra</th>
+                        <th class="monto">Monto Total</th>
+                        <th class="plazo">Plazo</th>
+                        <th class="monto">Abono Mensual</th>
+                    </tr>
+                </thead>
+                <tbody id="historial-compras-body"></tbody>
+                <tfoot id="historial-compras-foot"></tfoot>
+            </table>
+        </section>
+
+        <section>
+            <h2>Historial de Abonos Realizados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha de Pago</th>
+                        <th>Descripción</th>
+                        <th class="monto">Monto Pagado</th>
+                    </tr>
+                </thead>
+                <tbody id="abonos-realizados-body"></tbody>
+            </table>
+        </section>
+
+    </div>
+    <input type="hidden" id="nombre" value="@Context.Session.GetString("nombre")" />
+    <script src="~/js/roles.js" asp-append-version="true"></script>
+    <script>
+        // --- SIMULACIÓN DE DATOS ---
+        // Se añade la propiedad 'fecha' a cada compra
+        const comprasRealizadas = [
+            { folio: 'A-7501', producto: 'Laptop UltraSlim X1',   fecha: '2025-06-15', monto: 18500.00, meses: 12 },
+            { folio: 'A-7502', producto: 'Monitor Curvo 27"',    fecha: '2025-06-15', monto: 6500.00,  meses: 6 },
+            { folio: 'B-1138', producto: 'Teclado Mecánico RGB',  fecha: '2025-06-18', monto: 1800.00,  meses: 3 }
+        ];
+
+        const abonosRealizados = [
+            { fecha: '2025-07-05', descripcion: 'Abono mensual consolidado', monto: 3719.44 },
+            { fecha: '2025-08-05', descripcion: 'Abono mensual consolidado', monto: 3719.44 }
+        ];
+
+        // --- LÓGICA DE CÁLCULO Y VISUALIZACIÓN ---
+        window.onload = function() {
+            const formatoMoneda = (numero) => numero.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
+
+            const historialBody = document.getElementById('historial-compras-body');
+            const historialFoot = document.getElementById('historial-compras-foot');
+            let totalComprado = 0;
+            let abonoMensualTotal = 0;
+
+            historialBody.innerHTML = '';
+            comprasRealizadas.forEach(compra => {
+                const abonoPorArticulo = compra.monto / compra.meses;
+                abonoMensualTotal += abonoPorArticulo;
+                totalComprado += compra.monto;
+
+                // Se añade la celda para la fecha en la nueva fila
+                historialBody.innerHTML += `<tr>
+                    <td class="folio">${compra.folio}</td>
+                    <td>${compra.producto}</td>
+                    <td>${compra.fecha}</td>
+                    <td class="monto">${formatoMoneda(compra.monto)}</td>
+                    <td class="plazo">${compra.meses} Meses</td>
+                    <td class="monto">${formatoMoneda(abonoPorArticulo)}</td>
+                </tr>`;
+            });
+            // Se ajusta el colspan a 5 para que el total se alinee correctamente
+            historialFoot.innerHTML = `<tr>
+                <td colspan="5" class="plazo">Total del Abono Mensual:</td>
+                <td class="monto">${formatoMoneda(abonoMensualTotal)}</td>
+            </tr>`;
+
+            const abonosBody = document.getElementById('abonos-realizados-body');
+            abonosBody.innerHTML = '';
+            abonosRealizados.forEach(abono => {
+                abonosBody.innerHTML += `<tr>
+                    <td>${abono.fecha}</td>
+                    <td>${abono.descripcion}</td>
+                    <td class="monto">${formatoMoneda(abono.monto)}</td>
+                </tr>`;
+            });
+
+            const totalAbonado = abonosRealizados.reduce((sum, abono) => sum + abono.monto, 0);
+            const deudaPendiente = totalComprado - totalAbonado;
+
+            document.getElementById('deuda-total-pendiente').textContent = formatoMoneda(deudaPendiente);
+            document.getElementById('monto-total-comprado').textContent = formatoMoneda(totalComprado);
+            document.getElementById('monto-total-abonado').textContent = formatoMoneda(totalAbonado);
+            document.getElementById('abono-mes-total').textContent = formatoMoneda(abonoMensualTotal);
+        };
+    </script>
+</body>
+</html>

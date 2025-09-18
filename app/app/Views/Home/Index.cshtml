@@ -1,0 +1,175 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario de Inicio de Sesión con Bulma</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-one-third">
+                    <div class="box">
+                        <h1 class="title has-text-centered">Iniciar Sesión</h1>
+                        <form>
+                            <div class="field">
+                                <label class="label">Usuario</label>
+                                <div class="control">
+                                    <input class="input" id="nombre" type="text" placeholder="Usuario">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Contraseña</label>
+                                <div class="control">
+                                    <input class="input" id="contra" type="password" placeholder="***">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Recordarme
+                                </label>
+                            </div>
+
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <button id="inicio" type="button" onclick="login()" class="button is-primary">Iniciar Sesión</button>
+                                    <button id="inicio2" onclick="login2()" class="button is-primary">Iniciar Sesión2</button>
+                                </div>
+                               
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+@section scripts {
+    <script type="text/javascript" language="javascript">
+
+
+        $('#Registro_Compra').hide();
+        $('#_Logout').hide();
+        $('#Estado_Cuenta').hide();
+        $('#Mi_Cuenta').hide();
+        $('#Registrar_Usuario').hide();
+
+        function login2() {
+            var nombre = $('#nombre').val();
+            var contra = $('#contra').val();
+            if (!nombre) {
+                alert('Por favor, ingresa tu usuario');
+                return;
+            }
+            if (!contra) {
+                alert('La contraseña no puede estar vacía');
+                return;
+            }
+            // Redirige a la pantalla de registro de compra
+            window.location.href = '/Home/Inicio?nombre=' + nombre;
+        }
+
+        function login() {
+
+            var nombre = $('#nombre').val();
+            var contra = $('#contra').val();
+
+            if (!nombre) {
+                Swal.fire(
+                    'Error',
+                    'Por favor, ingresa tu usuario',
+                    'error'
+                );
+                return;
+            }
+
+            if (!contra) {
+                Swal.fire(
+                    'Error',
+                    'La contraseña no puede estar vacía',
+                    'error'
+                );
+                return;
+            }
+
+            var form_data = new FormData();
+            form_data.append("nombre", nombre);
+            form_data.append("contra", contra);
+
+            $.ajax({
+                url: "/Home/Login",
+                method: "POST",
+                data: form_data,
+                contentType: false,
+                dataType: "json",
+                processData: false,
+                success: function (data) {
+                    console.log(data);
+
+                    if (data.success === false) {
+                        Swal.fire({
+                            title: 'Error',
+                            text: data.message, // Muestra el mensaje de error del servidor
+                            icon: 'error'
+                        });
+                        return;
+                    }
+                    // Si el inicio de sesión es exitoso (success es true)
+                    if (data.success === true) {
+                        // Muestra un mensaje de bienvenida y luego redirige
+                        Swal.fire({
+                            title: '¡Bienvenido!',
+                            text: data.message,
+                            icon: 'success',
+                            timer: 2500, // La alerta se cierra después de 1.5 segundos
+                            showConfirmButton: false
+                        });
+                        //var nombre = data[0].NOMBRE;
+                            // Redirige a la pantalla de registro de compra
+                            window.location.href = '/Home/Inicio?nombre=' + nombre;
+                        
+                        //return;
+                    }
+                    else {
+                         Swal.fire({
+                            title: 'Error',
+                            //text: data.message, // Muestra el mensaje de error del servidor
+                            text: 'Error de respuesta',
+                            icon: 'error'
+                        });
+                    }
+
+                    // Si el inicio de sesión falla (success es false)
+                   
+                }
+            }).fail(function () {
+                // Si hay un error en la comunicación con el servidor
+                Swal.fire({
+                    title: 'Error de Conexión',
+                    text: 'No se pudo procesar la solicitud. Inténtalo de nuevo.',
+                    icon: 'error'
+                });
+            });
+        }
+
+    </script>
+}

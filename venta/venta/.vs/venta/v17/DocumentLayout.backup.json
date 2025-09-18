@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|solutionrelative:venta\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|c:\\users\\aliras\\desktop\\app\\venta\\venta\\venta\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|solutionrelative:venta\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|c:\\users\\aliras\\desktop\\app\\venta\\venta\\venta\\registrararticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|solutionrelative:venta\\registrararticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|c:\\users\\aliras\\desktop\\app\\venta\\venta\\venta\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|solutionrelative:venta\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|solutionrelative:venta\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|solutionrelative:venta\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegistrarArticulo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\RegistrarArticulo.cs",
+              "RelativeDocumentMoniker": "venta\\RegistrarArticulo.cs",
+              "ToolTip": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\RegistrarArticulo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "venta\\RegistrarArticulo.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T21:10:12.383Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Stock.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\Stock.cs",
+              "RelativeDocumentMoniker": "venta\\Stock.cs",
+              "ToolTip": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\Stock.cs [Dise\u00F1o]",
+              "RelativeToolTip": "venta\\Stock.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T20:50:01.529Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\Program.cs",
+              "RelativeDocumentMoniker": "venta\\Program.cs",
+              "ToolTip": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\Program.cs",
+              "RelativeToolTip": "venta\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T22:09:27.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "venta.cs",
+              "DocumentMoniker": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\venta.cs",
+              "RelativeDocumentMoniker": "venta\\venta.cs",
+              "ToolTip": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\venta.cs",
+              "RelativeToolTip": "venta\\venta.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAIAwwIQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T21:56:55.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "venta.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\venta.cs",
+              "RelativeDocumentMoniker": "venta\\venta.cs",
+              "ToolTip": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\venta.cs [Dise\u00F1o]",
+              "RelativeToolTip": "venta\\venta.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T16:21:22.566Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\Form1.cs",
+              "RelativeDocumentMoniker": "venta\\Form1.cs",
+              "ToolTip": "C:\\Users\\aliras\\Desktop\\APP\\venta\\venta\\venta\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "venta\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T16:18:44.06Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

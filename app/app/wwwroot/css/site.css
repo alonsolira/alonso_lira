@@ -1,0 +1,37 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+#_Logout .nav-link {
+    color: red; /* Color de texto en rojo */
+    font-weight: bold; /* Texto en negrita para resaltar */
+}
+.navbar-nav .nav-item a.active {
+    background-color: #e9ecef; /* A light grey background */
+    font-weight: bold;
+    border-radius: 5px;
+}
+/* Efecto al pasar el mouse */
+#_Logout .nav-link:hover {
+    background-color: rgba(255, 0, 0, 1); /* Fondo rojo claro */
+    color: darkred; /* Color de texto más oscuro al pasar el mouse */
+    border-radius: 5px; /* Borde redondeado para un mejor aspecto */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}

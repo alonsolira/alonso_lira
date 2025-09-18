@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuarios</title>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #1c1e21;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 600;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #dddfe2;
+                border-radius: 8px;
+                font-size: 1em;
+                box-sizing: border-box;
+            }
+
+        button {
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+            button:hover {
+                background-color: #166fe5;
+            }
+
+        /* Estilos para la tabla de usuarios */
+        .table-container {
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        thead {
+            background-color: #f0f2f5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>👤 Registrar Nuevo Usuario</h1>
+
+        <form id="registroForm">
+            <div class="form-group">
+                <label for="nombre-usuario">Nombre Completo</label>
+                <input type="text" id="nombre-usuario" placeholder="Ingresa el nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena">Asignar Contraseña</label>
+                <input type="password" id="contrasena" placeholder="Ingresa una contraseña" required>
+            </div>
+
+            <button type="submit">Registrar Usuario</button>
+        </form>
+
+        <div class="table-container">
+            <h2>👥 Usuarios Registrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Contraseña</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-usuarios-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <input type="hidden" id="nombre" value="@Context.Session.GetString("nombre")" />
+    <script src="~/js/roles.js" asp-append-version="true"></script>
+    <script>
+        // Obtener referencias a los elementos del DOM
+        const form = document.getElementById('registroForm');
+        const tablaBody = document.getElementById('tabla-usuarios-body');
+
+        // Escuchar el evento 'submit' del formulario
+        form.addEventListener('submit', function(event) {
+            // Prevenir que la página se recargue
+            event.preventDefault();
+
+            // Obtener los valores del nombre y la contraseña
+            const nombreInput = document.getElementById('nombre-usuario');
+            const contrasenaInput = document.getElementById('contrasena');
+            const nombre = nombreInput.value;
+            const contrasena = contrasenaInput.value;
+
+            // Validar que los campos no estén vacíos (HTML 'required' ya ayuda)
+            if (nombre.trim() === '' || contrasena.trim() === '') {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+
+            // Crear una nueva fila para la tabla
+            const nuevaFila = document.createElement('tr');
+
+            // Añadir las celdas con el nombre y la contraseña
+            nuevaFila.innerHTML = `
+                <td>${nombre}</td>
+                <td>${contrasena}</td>
+            `;
+
+            // Agregar la nueva fila al cuerpo de la tabla
+            tablaBody.appendChild(nuevaFila);
+
+            // Limpiar los campos del formulario después del registro
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>
