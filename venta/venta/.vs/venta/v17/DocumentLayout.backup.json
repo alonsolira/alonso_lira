@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\aliras\\Desktop\\APP\\alonso_lira\\venta\\venta\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|C:\\Users\\aliras\\Desktop\\APP\\alonso_lira\\venta\\venta\\venta\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|c:\\users\\aliras\\desktop\\app\\alonso_lira\\venta\\venta\\venta\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|solutionrelative:venta\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|c:\\users\\aliras\\desktop\\app\\alonso_lira\\venta\\venta\\venta\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|C:\\Users\\aliras\\Desktop\\APP\\alonso_lira\\venta\\venta\\venta\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{940BDBFC-03D2-48FE-872B-5005B0DDCAE0}|venta\\venta.csproj|solutionrelative:venta\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -82,7 +82,7 @@
               "RelativeDocumentMoniker": "venta\\venta.cs",
               "ToolTip": "C:\\Users\\aliras\\Desktop\\APP\\alonso_lira\\venta\\venta\\venta\\venta.cs",
               "RelativeToolTip": "venta\\venta.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAhwLIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAmwLIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T21:56:55.486Z",
               "EditorCaption": ""
@@ -96,8 +96,7 @@
               "ToolTip": "C:\\Users\\aliras\\Desktop\\APP\\alonso_lira\\venta\\venta\\venta\\venta.cs [Dise\u00F1o]",
               "RelativeToolTip": "venta\\venta.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T16:21:22.566Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-09-15T16:21:22.566Z"
             },
             {
               "$type": "Document",
