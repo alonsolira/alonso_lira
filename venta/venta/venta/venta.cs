@@ -17,6 +17,7 @@ namespace venta
             InitializeComponent();
             
         }
+        DateTime hoy = DateTime.Now;
 
         private Size tamanoOriginal;
         private Size tamanoAnimado;
@@ -25,6 +26,7 @@ namespace venta
         private void venta_Load(object sender, EventArgs e)
         {
             // Add any additional initialization logic here
+            label2.Text = hoy.ToShortDateString();
             toolTip1.SetToolTip(pictureBox1, "Ventas");
             toolTip1.SetToolTip(pictureBox2, "Stock");
             toolTip1.SetToolTip(pictureBox3, "Sucursales");
@@ -44,8 +46,21 @@ namespace venta
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Stock optionForm = new Stock();
-            optionForm.Show();
+            Stock frm = Application.OpenForms.OfType<Stock>().FirstOrDefault();
+
+            if (frm != null)
+            {
+                // Si existe, le mandamos el foco y avisamos al usuario
+                frm.Activate();
+                MessageBox.Show("Ya esta abierta esta ventana");
+            }
+            else
+            {
+                // Si no existe, creamos una nueva instancia y la mostramos
+                Stock optionForm = new Stock();
+                optionForm.Show();
+            }
+
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)

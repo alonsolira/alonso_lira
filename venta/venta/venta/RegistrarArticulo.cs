@@ -16,5 +16,11 @@ namespace venta
         {
             InitializeComponent();
         }
+        DateTime hoy = DateTime.Now;
+        private void RegistrarArticulo_Load(object sender, EventArgs e)
+        {
+            label9.Text = hoy.ToShortDateString();
+
+        }
     }
 }
